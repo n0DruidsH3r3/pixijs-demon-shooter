@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+}
+
+h3 {
+    text-align: center;
+}
+
+
+#game-div {
+    position: relative;
+    text-align: center;
+}
+
+#game-div > div:first-child {
+    position: absolute;
+    top: 10px;
+    left: 35px;
+    text-align:start;
+}
+
+.game-over-screen {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    min-width: 300px;
+    min-height: 150px;
+    background-color: #F0F8FF;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.game-over-screen > button {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    user-select: none;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-container-part-side {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    background-color: #F0F8FF;
+}
+
+.main-container-part-center {
+    width: 70%;
+}
+
+.movement-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.movement-container-part-center > div,.movement-container-part-side > div {
+    min-width: 50px;
+    min-height: 50px;
+    text-align: center;
+    padding-top: 14px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.movement-container > div  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.movement-container > div > div {
+    box-shadow: 0 3px 15px rgb(0 0 0 / 0.4);
+    background-color: #A9A9A9;
+}
+
+.movement-container-part-center {
+    min-width: 99%;
+}
+
+.movement-container-part-side {
+    margin-top: 12px;
+}
+
+.movement-container-part-side > div:not(:first-child):not(:last-child) {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.main-container-part-side > div {
+    margin-bottom: 50px;
+}
+
+.mouse-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mouse-container-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 40%;
+}
+
+.mouse-container-section > div {
+    margin-bottom: 5px;
+    background-color: #A9A9A9;
+}
+
+.mouse-container-section > div:not(:last-child):not(:first-child) {
+    margin-left: 5px;
+}
+
+.left-mouse-button {
+    width: 45px;
+    height: 65px;
+    border-top-left-radius: 70px 70px;
+}
+
+.right-mouse-button {
+    width: 45px;
+    height: 65px;
+    border-top-right-radius: 70px 70px;
+}
+
+.back-mouse {
+    width: 95px;
+    height: 100px;
+    border-bottom-right-radius: 70px 70px;
+    border-bottom-left-radius: 70px 70px;
+}
+
+.spacebar-hotkey-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.spacebar-hotkey-container > div {
+    box-shadow: 0 3px 15px rgb(0 0 0 / 0.4);
+    background-color: #A9A9A9;
+    min-width: 170px;
+    min-height: 35px;
+    text-align: center;
+    padding-top: 8px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.reload-hotkey-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.reload-hotkey-container > div {
+    box-shadow: 0 3px 15px rgb(0 0 0 / 0.4);
+    background-color: #A9A9A9;
+    min-width: 50px;
+    min-height: 50px;
+    text-align: center;
+    padding-top: 14px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+section > ul {
+    list-style: none;
+}
+
+.main-container-part-side > section:first-child {
+    margin-top: 35px;
+}
+
+@media (max-width: 1650px) {
+    h3, li {
+        font-size: medium;
+    }
+
+    .movement-container-part-center > div,.movement-container-part-side > div,.reload-hotkey-container > div {
+        font-size: small;
+        min-width: 25px;
+        min-height: 25px;
+        padding-top: 5px;
+    }
+
+    .spacebar-hotkey-container > div {
+        font-size: small;
+        min-width: 85px;
+    }
+
+    .left-mouse-button {
+        width: 25px;
+        height: 40px;
+        border-top-left-radius: 35px 35px;
+    }
+    
+    .right-mouse-button {
+        width: 25px;
+        height: 40px;
+        border-top-right-radius: 35px 35px;
+    }
+    
+    .back-mouse {
+        width: 55px;
+        height: 50px;
+        border-bottom-right-radius: 35px 35px;
+        border-bottom-left-radius: 35px 35px;
+    }
+}
+
+@media (max-width: 960px) {
+    .main-container-part-side {
+        display: none;
+    }
+}

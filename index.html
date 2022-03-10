@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/pixi.min.js"></script>
+    <script src="js/pixi-sound.js"></script>
+
+    <script src="js/util/AssetLoader.js"></script>
+    <script src="js/Initial.js"></script>
+    
+    <script src="js/controller/BulletController.js"></script>
+    <script src="js/controller/DemonController.js"></script>
+    <script src="js/controller/SpawnableController.js"></script>
+    <script src="js/controller/GameController.js"></script>
+
+    <script src="js/entity/Bullet.js"></script>
+    <script src="js/entity/Player.js"></script>
+    <script src="js/entity/Demon.js"></script>
+    <script src="js/entity/DemonProjectile.js"></script>
+    <script src="js/entity/Spawnable.js"></script>
+
+    <script src="js/util/Keyboard.js"></script>
+    <script src="js/util/Movement.js"></script>
+    <script src="js/GUI.js"></script>
+    <script src="js/controller/SoundController.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="main-container-part-side">
+            
+            <h3>Use W, A, S, D to move</h3>
+
+            <div class="movement-container">
+                <div class="movement-container-part-center">
+                    <div >W</div>
+                </div>
+                <div class="movement-container-part-side">
+                    <div>
+                        <div>A</div>
+                    </div>
+                    <div>
+                        <div>S</div>
+                    </div>
+                    <div>
+                        <div>D</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Use mouse to aim</h3>
+            <div class="mouse-container">
+                <div class="mouse-container-section">
+                    <div class="left-mouse-button"></div>
+                    <div class="right-mouse-button"></div>
+                    <div class="back-mouse"></div>
+                </div>
+            </div>
+
+            <h3>Use spacebar to shoot</h3>
+            <div class="spacebar-hotkey-container">
+                <div>spacebar</div>
+            </div>
+
+            <h3>Use R to switch weapons</h3>
+            <div class="reload-hotkey-container">
+                <div>R</div>
+            </div>
+        </div>
+
+        <div id="game-div" class="main-container-part-center">
+            <div>
+                <p>Health: <span id="player-health">0</span></p>
+                <p>Weapon &amp; Ammo: <span id="weapon-bullets">0</span></p>
+            </div>
+            
+            <div id="game-over" class="game-over-screen">
+                <h2>Game Over!</h2>
+                <button onclick="restartGame()">Restart Game</button>
+            </div>
+        </div>
+
+        <div class="main-container-part-side">
+            <section>
+                <h3>Demon kills</h3>
+                <ul>
+                    <li><strong>Tank Demon:</strong><span id="tank-demons-span">0</span></li>
+                    <li><strong>Caster Demon:</strong><span id="caster-demons-span">0</span></li>
+                    <li><strong>Runner Demon:</strong><span id="runner-demons-span">0</span></li>
+                </ul>
+            </section>
+            <section>
+                <h3>Spawnable pickups</h3>
+                <ul>
+                    <li><strong>Weapons:</strong><span id="weapons-pickup-span">0</span></li>
+                    <li><strong>Health Potions:</strong><span id="health-potions-pickup-span">0</span></li>
+                    
+                </ul>
+            </section>
+            <section>
+                <h3>Game statistics</h3>
+                <ul>
+                    <li><strong>Time Played:</strong><span id="time-played-span">0</span></li>
+                    <li><strong>Difficulty Level:</strong><span id="difficulty-level-span">0</span></li>
+                </ul>
+            </section>
+            <section>
+                <h3>Other statistics</h3>
+                <ul>
+                    <li><strong>Bullets Fired:</strong><span id="bullets-fired-span">0</span></li>
+                    <li><strong>Flies Spawned:</strong><span id="flies-spawned-span">0</span></li>
+                    <li><strong>Demon Gates Spawned:</strong><span id="demon-gates-spawned-span">0</span></li>
+                </ul>
+            </section>
+            
+        </div>
+    </div>
+</body>
+</html>
